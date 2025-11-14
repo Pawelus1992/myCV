@@ -1,0 +1,4 @@
+﻿@using System.Collections.Generic
+@using myCV.Models
+
+@await Html.PartialAsync("_Job", (IEnumerable<Job>)ViewData["JobList"])

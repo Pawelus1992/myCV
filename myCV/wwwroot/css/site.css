@@ -1,0 +1,56 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url("/img/bg_light.bmp");
+}
+
+/* Fixed navbar tweaks */
+.navbar.fixed-top {
+  z-index: 1030; /* keep above page content */
+  width: 100%;
+}
+
+/* Smooth padding change when navbar height changes (optional) */
+body {
+  transition: padding-top 0.15s ease-in-out;
+}
+
+
+/* languages */
+@media (hover: hover) and (pointer: fine) {
+    .nav-item.dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0; /* avoid gap between toggle and menu */
+    }
+    /* optional: show bootstrap 'open' visual*/
+    .nav-item.dropdown:hover > .dropdown-toggle[aria-expanded] {
+        aria-expanded: true;
+    }
+}
+
+/* language flag inside menu */
+.lang-flag {
+  width: 20px;
+  height: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+  display: inline-block;
+}

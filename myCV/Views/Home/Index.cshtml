@@ -1,0 +1,17 @@
+﻿@using System.Collections.Generic
+@using myCV.Models
+@{
+    var lang = ViewContext.RouteData.Values["lang"]?.ToString(); // get current language from route data (Program.cs)
+    ViewData["Title"] = lang == "pl" ? "Witaj" : "Welcome";
+
+    var jobList = ViewData["JobList"] as IEnumerable<Job>;
+    var educationList = ViewData["EducationList"] as IEnumerable<Education>;
+}
+<div class="container">
+    @await Html.PartialAsync("_ContactInfo")
+    @await Html.PartialAsync("_Job", jobList)
+    @await Html.PartialAsync("_Education", educationList)
+    @await Html.PartialAsync("_Skills")
+    @await Html.PartialAsync("_Projects")
+    @await Html.PartialAsync("_Hobby")
+</div>

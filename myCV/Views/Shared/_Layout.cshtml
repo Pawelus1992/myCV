@@ -1,0 +1,100 @@
+﻿@{
+    var lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
+    var menuLabelMainP = lang == "pl" ? "Strona główna" : "Main page";
+    var menuLabelEdu = lang == "pl" ? "Edukacja" : "Education";
+    var menuLabelExp = lang == "pl" ? "Doświadczenie zawodowe" : "Work experience";
+    var menuLabelLang = lang == "pl" ? "Zmień język" : "Change language";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/myCV.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@menuLabelMainP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Education" asp-action="Index">@menuLabelEdu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Job" asp-action="Index">@menuLabelExp</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">@menuLabelLang</a>
+                            <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                                <li>
+                                    <a class="dropdown-item" asp-route-lang="en">
+                                        <img src="~/img/menuGB.png" alt="EN" class="lang-flag"/> EN
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-route-lang="pl">
+                                        <img src="~/img/menuPL.png" alt="PL" class="lang-flag" /> PL
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - myCV
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        // keep body content visible below a fixed navbar:
+        (function () {
+            function updateBodyPadding() {
+                var nav = document.querySelector('.navbar.fixed-top');
+                if (!nav) return;
+                var height = nav.getBoundingClientRect().height;
+                document.body.style.paddingTop = height + 'px';
+            }
+
+            // update on load and resize
+            window.addEventListener('load', updateBodyPadding);
+            window.addEventListener('resize', updateBodyPadding);
+
+            // observe navbar for class/size changes (collapse/expand)
+            document.addEventListener('DOMContentLoaded', function () {
+                var nav = document.querySelector('.navbar.fixed-top');
+                if (!nav) return;
+                var observer = new MutationObserver(updateBodyPadding);
+                observer.observe(nav, { attributes: true, childList: true, subtree: true });
+                // initial
+                updateBodyPadding();
+            });
+        })();
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
