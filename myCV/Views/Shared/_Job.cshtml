@@ -1,19 +1,23 @@
 @model IEnumerable<Job>
 @{
-    var lang = ViewContext.RouteData.Values["lang"]?.ToString();
+    var lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
     var title = lang == "pl" ? "Doœwiadczenie zawodowe" : "Work experience";
 }
-<div>
+<div id="job">
     <h1 class="text-center">@title</h1>
-    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </span>
+    <span>Lorem Ipsum is simply dummy text of the printing and 
+    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </span>
 
-    @foreach (var item in Model)
-    {
-        <div class="mt-4">
-            <h3>@item.getCompanyName()</h3>
-            <p>@item.getPositionName(lang)</p>
-            <p>@item.getStartDate() - @item.getEndDate()</p>
-            <p>@item.getDescription(lang)</p>
-        </div>
-    }
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <h3>@item.getCompanyName()</h3>
+                <p>@item.getPositionName(lang)</p>
+                <p>@item.getStartDate() - @item.getEndDate(lang)</p>
+                <p style="white-space: pre-wrap;">@item.getDescription(lang)</p>
+            </li>
+        }
+    </ul>
 </div>

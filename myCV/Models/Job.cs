@@ -44,9 +44,9 @@
         {
             return this.startDate.ToString("yyyy/MM/dd");
         }
-        public string getEndDate()
+        public string getEndDate(string lang)
         {
-            return this.endDate.ToString("yyyy/MM/dd");
+            return this.endDate < new DateOnly(1999, 1, 1) ? lang == "pl" ? "Obecnie" : "Current" : this.endDate.ToString("yyyy/MM/dd");
         }
 
         public string getCompanyName()
