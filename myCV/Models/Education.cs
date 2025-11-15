@@ -10,6 +10,7 @@
         DateOnly endDate;
         string description;
         string descriptionPl;
+        string website;
         public Education()
         {
             this.schoolName = string.Empty;
@@ -20,9 +21,10 @@
             this.endDate = new DateOnly();
             this.description = string.Empty;
             this.descriptionPl = string.Empty;
+            this.website = string.Empty;
         }
 
-        public Education(string schoolName, string schoolNamePl, string degree, string degreePl, DateOnly startDate, DateOnly endDate, string description, string descriptionPl)
+        public Education(string schoolName, string schoolNamePl, string degree, string degreePl, DateOnly startDate, DateOnly endDate, string description, string descriptionPl, string website)
         {
             this.schoolName = schoolName;
             this.schoolNamePl = schoolNamePl;
@@ -32,6 +34,7 @@
             this.endDate = endDate;
             this.description = description;
             this.descriptionPl = descriptionPl;
+            this.website = website;
         }
 
         public string getSchoolName(string lang)
@@ -57,6 +60,11 @@
         public string getDescription(string lang)
         {
             return lang == "pl" ? this.descriptionPl : this.description;
+        }
+
+        public string getWebsite()
+        {
+            return this.website;
         }
     }
 }

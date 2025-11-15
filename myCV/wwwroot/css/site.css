@@ -1,5 +1,12 @@
+:root {
+    /* set this to match your fixed navbar height (adjust if needed) */
+    --navbar-height: 30px;
+}
+
 html {
-  font-size: 14px;
+    font-size: 14px;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--navbar-height); /* helps scroll containers in some browsers */
 }
 
 @media (min-width: 768px) {
@@ -53,4 +60,15 @@ body {
   margin-right: 8px;
   vertical-align: middle;
   display: inline-block;
+}
+
+/* smooth optional */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height); /* helps scroll containers in some browsers */
+}
+
+/* reserve space for any anchor target with an id */
+[id] {
+  scroll-margin-top: var(--navbar-height);
 }

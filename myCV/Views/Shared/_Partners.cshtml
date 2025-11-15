@@ -1,0 +1,10 @@
+﻿@{
+    var lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
+    var title = lang == "pl" ? "Partnerzy" : "Partners";
+}
+<h1 class="text-center">@title</h1>
+<ul>
+    <li><a href="https://www.euvic.com/pl/">Euvic</a></li>
+    <li><a href="https://www.hl-display.com/pl/">HL-Display</a></li>
+    <li><a href="https://www.arh-plus.pl/pl">ARH Plus</a></li>
+</ul>
