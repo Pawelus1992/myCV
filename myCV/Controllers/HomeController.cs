@@ -11,7 +11,7 @@ namespace myCV.Controllers
         {
             new Job("Software Developer", "Programista", 
                 "My own company", 
-                "Tworzenie oprogramowania na zlecenie podmiotów - głównie dla Euvic", 
+                "Tworzenie oprogramowania na zlecenie podmiotów", 
                 new DateOnly(2024, 7, 1), new DateOnly(), "FlexCode"),
             new Job("Backend Developer", "Programista",
                 "Development and optimization of software solutions, including ERP and WMS systems\nIntegration of client systems with third-party software solutions\nCreation and maintenance of technical documentation for developed IT solutions\nCollaboration with business analysts to estimate, plan and implement IT solutions",
