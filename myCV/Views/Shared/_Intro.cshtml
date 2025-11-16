@@ -1,0 +1,19 @@
+﻿@{
+    string lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
+    string title = lang == "pl" ? "Cieszę się, że tu zajrzałeś(-aś)!": "I am pleased to welcome you here!";
+    string title2 = lang == "pl" ? "Chętnie przekażę Ci podstawowe informacje o mnie" : "I will gladly provide you with some basic information about myself";
+    string descr = lang == "pl" ? "Jestem programistą Backend, który ma ambicje stać się Fullstack developerem.Specjalizuję się w projektowaniu, optymalizacji i utrzymaniu środowisk SQL.Tworzę wydajne rozwiązania oparte na danych, łącząc praktyczną wiedzę z zakresu SQL z doświadczeniem w programowaniu w C#, .NET oraz Pythonie.W swojej pracy stawiam na wysoką jakość kodu, automatyzację procesów oraz tworzenie skalowalnych struktur bazodanowych.Posiadam rozwinięte umiejętności analityczne, które pozwalają mi szybko diagnozować problemy i proponować trafne, efektywne rozwiązania. Cenię sobie dobrą komunikację i współpracę w zespole — potrafię jasno przekazywać złożone zagadnienia techniczne i aktywnie uczestniczyć w procesie projektowym. Jestem osobą zorganizowaną, nastawioną na ciągły rozwój i doskonalenie swoich kompetencji."
+                                : "I am a backend developer with a great ambition to became a fullstack developer.I'm specialize in designing, optimizing and maintaining SQL environments.I create efficient, data-driven solutions by combining practical SQL expertise with experience in C#, .NET and Python.In my work, I focus on high-quality code, process automation and building scalable database structures. I possess strong analytical skills that allow me to quickly diagnose issues and propose accurate, effective solutions. I value clear communication and teamwork — I can convey complex technical concepts in an accessible way and actively contribute to the project development process. I am well-organized, focused on continuous learning and committed to improving my professional skills.";
+    string pdfPath = lang == "pl" ? "/pdf/cv pl.pdf" : "/pdf/cv en.pdf";
+    string labelPdfPath = lang == "pl" ? "Otwórz CV w formacie PDF" : "Get CV in PDF format";
+    //string pdfUrl = Url.Content(pdfPath)?.Replace(" ", "%20") ?? "#";
+}
+<div id="intro">
+    <img src="~/img/toplogo.jpg" />
+    <h1 class="text-center">@title</h1>
+    <h2 class="text-center">@title2</h2>
+    <div class="text-justify">@descr</div>
+    <div class="btn">
+        <a href="@pdfPath" target="_blank" class="btn btn-primary">@labelPdfPath</a>
+    </div>
+</div>

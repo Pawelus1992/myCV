@@ -9,9 +9,9 @@ namespace myCV.Controllers
         //input data:
         public static IList<Job> jobs = new List<Job>
         {
-            new Job("Software Developer", "Programista", 
-                "My own company", 
-                "Tworzenie oprogramowania na zlecenie podmiotów", 
+            new Job("Owner/Software Developer", "Właściciel/Programista",
+                "Running own business\nCreating dedicated software on behalf of entities", 
+                "Prowadzenie jednoosobowej działalności gospodarczej\nTworzenie dedykowanego oprogramowania na zlecenie podmiotów", 
                 new DateOnly(2024, 7, 1), new DateOnly(), "FlexCode"),
             new Job("Backend Developer", "Programista",
                 "Development and optimization of software solutions, including ERP and WMS systems\nIntegration of client systems with third-party software solutions\nCreation and maintenance of technical documentation for developed IT solutions\nCollaboration with business analysts to estimate, plan and implement IT solutions",
@@ -36,10 +36,10 @@ namespace myCV.Controllers
 
         public static IList<Hobby> hobbies = new List<Hobby>
         {
-            new Hobby("Swiming", "Pływanie", "I have been swiming since I was 6 years old", "pływam od 6'tego roku życia"),
+            new Hobby("Swiming", "Pływanie", "I have been swiming since I was 6 years old", "pływam od 6-tego roku życia"),
             new Hobby("Climbing", "Wspinaczka", "this is a great opportunity to overcome your weaknesses", "ten sport daje okazje do pokonywania swoich słabości"),
-            new Hobby("Squash", "Squash", "one of the few sports which I enjoy running", "jeden z nielicznych sportów, gdzie chętnie biegam"),
-            new Hobby("Dog training", "Tresura psa", "I love spending time with my dog (Coco)", "uwielbiam spędzać czas ze swoim psiakiem (Coco)"),
+            new Hobby("Squash", "Squash", "one of the few sports which I enjoy running", "jeden z nielicznych sportów, w których chętnie biegam"),
+            new Hobby("Dog training", "Tresura psa", "I love spending time with my dog Coco", "uwielbiam spędzać czas ze swoim psiakiem Coco"),
             new Hobby("Board games", "Gry planszowe", "together with friends, mainly strategy games", "razem ze znajomymi, głównie gry strategiczne"),
             new Hobby("Computer games", "Gry komputerowe", "mainly strategy and RPG games", "głównie gry strategiczne i RPG")
         };

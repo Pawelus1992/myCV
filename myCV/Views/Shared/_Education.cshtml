@@ -1,10 +1,10 @@
 @model IEnumerable<Education>
 @{
-    var lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
+    string lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
     string title = lang == "pl" ? "Edukacja" : "Education";
     string page = lang == "pl" ? "Strona internetowa" : "Website";
 }
-<div id="education">
+<div id="education" class="pageElement">
     <h1 class="text-center">@title</h1>
     <ul>
         @foreach (var item in Model)
@@ -14,7 +14,7 @@
                 <span>@item.getStartDate() - @item.getEndDate()</span>
                 <p>@item.getDegree(lang)</p>
                 <p style="white-space: pre-wrap;">@item.getDescription(lang)</p>
-                <span><a href="@item.getWebsite()">@(page)</a></span>
+                <span><a href="@item.getWebsite()" target="_blank" rel="noopener noreferrer">@(page)</a></span>
             </li>
         }
     </ul>

@@ -1,10 +1,20 @@
 ﻿@{
-    var lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
-    var title = lang == "pl" ? "Partnerzy" : "Partners";
+    string lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
+    string title = lang == "pl" ? "Partnerzy" : "Partners";
 }
-<h1 class="text-center">@title</h1>
-<ul>
-    <li><a href="https://www.euvic.com/pl/">Euvic</a></li>
-    <li><a href="https://www.hl-display.com/pl/">HL-Display</a></li>
-    <li><a href="https://www.arh-plus.pl/pl">ARH Plus</a></li>
-</ul>
+<div class="pageElement">
+    <div id="partners">
+        <h1 class="text-center">@title</h1>
+        <div class="partner-logo">
+            <a href="https://www.euvic.com/pl/" target="_blank" rel="noopener noreferrer">
+                <img src="~/img/logoEuvic.png" alt="PL"/>
+            </a>
+        </div>
+        <div class="partner-logo">
+            <a href="https://www.hl-display.com/pl/" target="_blank" rel="noopener noreferrer">
+                <img src="~/img/logoHL.png" alt="PL"/>
+            </a>
+        </div>
+        @* <a href="https://www.arh-plus.pl/pl" target="_blank" rel="noopener noreferrer">ARH Plus</a> *@
+    </div>
+</div>

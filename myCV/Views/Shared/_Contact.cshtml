@@ -1,0 +1,18 @@
+﻿@{
+    string lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
+    string title = lang == "pl" ? "Dane kontaktowe" : "Contact info";
+    string labelPhone = lang == "pl" ? "Telefon" : "Phone";
+    string labelBDate = lang == "pl" ? "Data urodzenia" : "Birth date";
+    string labelBCountry = lang == "pl" ? "Polska" : "Poland";
+}
+
+<div id="contact" class="pageElement">
+    <h1 class="text-center">@title</h1>
+    <ul>
+        <li>Email: pawel.sierz@gmail.com</li>
+        <li><a href="https://www.linkedin.com/in/pawel-sierz" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li>@labelPhone: +48 883 061 237</li>
+        <li>@labelBDate: 19.07.1992</li>
+        <li>Katowice, @labelBCountry</li>
+    </ul>
+</div>

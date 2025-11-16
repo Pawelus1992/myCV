@@ -1,7 +1,7 @@
 ﻿@using System.Collections.Generic
 @using myCV.Models
 @{
-    var lang = ViewContext.RouteData.Values["lang"]?.ToString(); // get current language from route data (Program.cs)
+    string lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
     ViewData["Title"] = lang == "pl" ? "Witaj" : "Welcome";
 
     var jobList = ViewData["JobList"] as IEnumerable<Job>;
@@ -9,12 +9,12 @@
     var hobbyList = ViewData["HobbyList"] as IEnumerable<Hobby>;
 }
 <div class="container">
-    <p>About me:</p>
-    @await Html.PartialAsync("_ContactInfo")
+    @await Html.PartialAsync("_Intro")
     @await Html.PartialAsync("_Job", jobList)
     @await Html.PartialAsync("_Education", educationList)
     @await Html.PartialAsync("_Skill")
     @await Html.PartialAsync("_Project")
     @await Html.PartialAsync("_Hobby", hobbyList)
+    @await Html.PartialAsync("_Contact")
     @await Html.PartialAsync("_Partners")
 </div>

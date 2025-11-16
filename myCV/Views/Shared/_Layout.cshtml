@@ -7,12 +7,13 @@
     };
     ;
     var menuLabelMainPage = lang == "pl" ? "O mnie" : "About me";
-    var menuLabelContact = lang == "pl" ? "Kontakt" : "Contact";
     var menuLabelJob = lang == "pl" ? "Doświadczenie zawodowe" : "Work experience";
     var menuLabelEducation = lang == "pl" ? "Edukacja" : "Education";
     var menuLabelSkill = lang == "pl" ? "Umiejętności" : "Skills";
     var menuLabelProject = lang == "pl" ? "Projekty" : "Projects";
     var menuLabelHobby = lang == "pl" ? "Zainteresowania" : "Hobbies";
+    var menuLabelContact = lang == "pl" ? "Kontakt" : "Contact";
+    var menuLabelPartners = lang == "pl" ? "Partnerzy" : "Partners";
     var menuLabelLang = lang == "pl" ? "Zmień język" : "Change language";
 }
 <!DOCTYPE html>
@@ -36,10 +37,8 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@menuLabelMainPage</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="@scrollToDiv("contact")">@menuLabelContact</a>
+                            @* <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@menuLabelMainPage</a> *@
+                            <a class="nav-link text-dark" href="@scrollToDiv("intro")">@menuLabelMainPage</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="@scrollToDiv("job")">@menuLabelJob</a>
@@ -56,6 +55,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="@scrollToDiv("hobby")">@menuLabelHobby</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="@scrollToDiv("contact")">@menuLabelContact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="@scrollToDiv("partners")">@menuLabelPartners</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-dark dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">@menuLabelLang</a>
                             <ul class="dropdown-menu" aria-labelledby="langDropdown">
@@ -66,7 +71,7 @@
                                 </li>
                                 <li>
                                     <a class="dropdown-item" asp-route-lang="pl">
-                                        <img src="~/img/menuPL.png" alt="PL" class="lang-flag" /> PL
+                                        <img src="~/img/menuPL.png" alt="PL" class="lang-flag"/> PL
                                     </a>
                                 </li>
                             </ul>

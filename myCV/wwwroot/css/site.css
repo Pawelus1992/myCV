@@ -1,33 +1,60 @@
 :root {
     /* set this to match your fixed navbar height (adjust if needed) */
     --navbar-height: 30px;
+    --app-font: "Asap", sans-serif;
+    --color-flex-code-bright: #1e7568;
+    --color-flex-code-dark: #135c51;
 }
 
 html {
     font-size: 14px;
     scroll-behavior: smooth;
     scroll-padding-top: var(--navbar-height); /* helps scroll containers in some browsers */
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
     margin-bottom: 60px;
     background-image: url("/img/bg_light.bmp");
+    font-family: var(--app-font);
+    transition: padding-top 0.15s ease-in-out; /* Smooth padding change when navbar height changes (optional) */
 }
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--color-flex-code-dark);
+}
+
+#intro {
+    text-align: center;
+}
+#intro img {
+    max-width: 1280px;
+    min-width: 380px;
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+.btn {
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+}
+.btn-primary {
+    background-color: var(--color-flex-code-bright);
+    border-color: var(--color-flex-code-dark);
+}
+.btn-primary:hover {
+    background-color: var(--color-flex-code-dark);
+}
+
 
 /* Fixed navbar tweaks */
 .navbar.fixed-top {
@@ -35,10 +62,10 @@ body {
   width: 100%;
 }
 
-/* Smooth padding change when navbar height changes (optional) */
+/* Smooth padding change when navbar height changes (optional)
 body {
-  transition: padding-top 0.15s ease-in-out;
-}
+    transition: padding-top 0.15s ease-in-out;
+}*/
 
 
 /* languages */
@@ -62,13 +89,43 @@ body {
   display: inline-block;
 }
 
-/* smooth optional */
+#partners {
+    /*vertical-align: middle;*/
+    margin: 0 auto;
+    text-align: center;
+}
+.partner-logo {
+    display: inline-block;
+    margin-right: 8px;
+}
+.partner-logo img {
+    width: 140px;
+    height: 140px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+
+/*
+/* smooth optional 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--navbar-height); /* helps scroll containers in some browsers */
+  scroll-padding-top: var(--navbar-height); /* helps scroll containers in some browsers 
 }
+*/
 
 /* reserve space for any anchor target with an id */
 [id] {
   scroll-margin-top: var(--navbar-height);
+}
+
+.pageElement {
+    padding-top: 15px;
+}
+
+.text-justify {
+    text-align: justify;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
 }
