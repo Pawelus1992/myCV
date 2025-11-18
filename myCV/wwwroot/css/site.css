@@ -97,6 +97,7 @@ body {
 .partner-logo {
     display: inline-block;
     margin-right: 8px;
+    margin-top: 15px;
 }
 .partner-logo img {
     width: 140px;

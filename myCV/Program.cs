@@ -22,11 +22,11 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{lang=en}/{controller=Home}/{action=Index}/{id?}");
+    pattern: "{lang=pl}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
-    name: "polish",
-    pattern: "{lang=pl}/{controller=Home}/{action=Index}/{id?}");
+    name: "english",
+    pattern: "{lang=en}/{controller=Home}/{action=Index}/{id?}");
 
 /* TO DO simply routs*/
 app.Run();

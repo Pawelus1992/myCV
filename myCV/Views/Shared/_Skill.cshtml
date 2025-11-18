@@ -1,11 +1,76 @@
 ﻿@{
     string lang = ViewContext.RouteData.Values["lang"]?.ToString() ?? "en";
     string title = lang == "pl" ? "Umiejętności" : "Skills";
+
+    string @labelTechSkills = lang == "pl" ? "Umiejętności techniczne" : "Technical skills";
+    string @labelSoftSkills = lang == "pl" ? "Umiejętności miękkie" : "Soft skills";
+    string @labelOtherSkills = lang == "pl" ? "Pozostałe umiejętności" : "Other skills";
+
+    string @labelSoftkillsCoop = lang == "pl" ? "Współpraca w grupie" : "Teamwork";
+    string @labelSoftkillsComu = lang == "pl" ? "Komunikacja interpersonalna" : "Interpersonal communication";
+    string @labelSoftkillsTarg = lang == "pl" ? "Orientacja na celu" : "Goal orientation";
+    string @labelSoftkillsResp = lang == "pl" ? "Samodzielność i odpowiedzialność" : "Indepedence and Accountability";
+    string @labelSoftkillsTime = lang == "pl" ? "Organizacja czasu i zadań" : "Time and task management";
+    string @labelLang = lang == "pl" ? "Języki" : "Languages";
+    string @labelLangPl = lang == "pl" ? "Język polski - rodzimy" : "Polish - native";
+    string @labelLangEn = lang == "pl" ? "Język angielski - poziom B1" : "English - B1 level";
+    string @labelLangGe = lang == "pl" ? "Język niemiecki - poziom A1" : "German - A1 level";
+    string @labelReports = lang == "pl" ? "Narzędzia do tworzenia raportów" : "Tools for creating reports";
+    string @labelDriving = lang == "pl" ? "Prawo jazdy kat. B" : "Driving license cat. B";
 }
 <div id="skill" class="pageElement">
-    <h1 class="text-center">@title</h1>
-    <ul>
-        <li>Umiejętności techniczne</li>
-        <li>Umiejętności miękkie</li>
-    </ul>
+    <header>
+        <h1 class="text-center">@title</h1>
+    </header>
+    <section>
+        <ul>
+            <li>@labelTechSkills
+                <ul>
+                    <li>C#</li>
+                    <li>.NET</li>
+                    <li>T-SQL</li>
+                    <li>PL/SQL</li>
+                    <li>MS SQL Server</li>
+                    <li>Oracle Database</li>
+                    <li>SSIS</li>
+                    <li>ETL</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Python</li>
+                    <li>XML</li>
+                    <li>JSON</li>
+                </ul>
+            </li>
+            <li>@labelSoftSkills
+                <ul>  
+                    <li>@labelSoftkillsComu</li>
+                    <li>@labelSoftkillsCoop</li>
+                    <li>@labelSoftkillsTarg</li>
+                    <li>@labelSoftkillsResp</li>
+                    <li>@labelSoftkillsTime</li>
+                </ul>
+            </li>
+            <li>@labelOtherSkills
+                <ul>
+                    <li>GIT</li>
+                    <li>SCRUM</li>
+                    <li>Agile</li>
+                    <li>@labelLang
+                        <ul>
+                            <li>@labelLangPl</li>
+                            <li>@labelLangEn</li>
+                            <li>@labelLangGe</li>
+                        </ul>
+                    </li>
+                    <li>@labelReports
+                        <ul>
+                            <li><a href="https://www.sap.com/products/data-cloud/crystal-reports.html" target="_blank" rel="noopener noreferrer">SAP Crystal Reports</a></li>
+                            <li><a href="https://www.seagullsoftware.com/" target="_blank" rel="noopener noreferrer">Seagull Bartender Label Editor</a></li>
+                        </ul>
+                    </li>
+                    <li>@labelDriving</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
 </div>
